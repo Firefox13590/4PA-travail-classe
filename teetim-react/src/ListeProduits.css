@@ -1,0 +1,9 @@
+.ListeProduits {
+  margin: 1rem auto;
+  width: 90vw;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

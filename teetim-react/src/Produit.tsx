@@ -2,7 +2,20 @@ import './Produit.css';
 
 
 
-export default function Produit({id, nom, prix, ventes}) {
+export default function Produit({ id, nom, prix, ventes, panier, setPanier }) {
+
+
+    function ajouterArticle() {
+        if (panier[id]) {
+            panier[id].qte++;
+        }
+        else {
+            panier[id] = { prix: prix, qte: 1 };
+        }
+        console.log(panier);
+        setPanier({...panier});
+    }
+
 
     return (
         <article className='Produit'>
@@ -19,7 +32,8 @@ export default function Produit({id, nom, prix, ventes}) {
                     $
                 </span>
             </div>
-            <button className="btn-ajouter">Ajouter au panier</button>
+            <button className="btn-ajouter"
+                onClick={ajouterArticle}>Ajouter au panier</button>
         </article>
     )
 }

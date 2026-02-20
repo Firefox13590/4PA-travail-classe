@@ -41,7 +41,7 @@ export default function Principal(props) {
                 </section>
             </article>
 
-            <ListeProduits/>
+            <ListeProduits {...props}/>
         </main>
     )
 }

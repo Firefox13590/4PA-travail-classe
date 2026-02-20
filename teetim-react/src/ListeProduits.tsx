@@ -8,7 +8,7 @@ export default function ListeProduits(props) {
     return (
         <section className='ListeProduits'>
             {
-                produits.map(prd => <Produit key={prd.id} {...prd}/>)
+                produits.map(prd => <Produit key={prd.id} {...prd} {...props}/>)
             }
         </section>
     )

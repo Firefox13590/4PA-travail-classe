@@ -2,7 +2,7 @@ import './Entete.css';
 import logo from './assets/images/logo.png';
 
 
-export default function Entete({ panier }) {
+export default function Entete({ panier }: {panier: IProduit}) {
     // Code imperatif ===> pipi caca fesse
     // let nbArticles = 0;
     // let sousTotal = 0;

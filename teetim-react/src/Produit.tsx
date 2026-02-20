@@ -2,18 +2,32 @@ import './Produit.css';
 
 
 
-export default function Produit({ id, nom, prix, ventes, panier, setPanier }) {
+export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {id: string, nom: string, prix: number, ventes: number, panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
 
 
     function ajouterArticle() {
         if (panier[id]) {
-            panier[id].qte++;
+            // panier[id].qte++;
+            setPanier((prev) => ({
+                ...prev,
+                [id]: {
+                    prix: panier[id].prix,
+                    qte: panier[id].qte++
+                }
+            }));
         }
         else {
-            panier[id] = { prix: prix, qte: 1 };
+            // panier[id] = { prix: prix, qte: 1 };
+            setPanier((prev) => ({
+                ...prev,
+                [id]: {
+                    prix: prix,
+                    qte: 1
+                }
+            }))
         }
         console.log(panier);
-        setPanier({...panier});
+        // setPanier({...panier});
     }
 
 

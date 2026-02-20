@@ -1,12 +1,11 @@
-import { useState } from 'react';
 import ListeProduits from './ListeProduits';
 import './Principal.css';
 
 
 
-export default function Principal(props) {
-    const [filtre, setFiltre] = useState("tous");
-    const [tri, setTri] = useState("random");
+export default function Principal(props: {panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
+    // const [filtre, setFiltre] = useState("tous");
+    // const [tri, setTri] = useState("random");
 
     return (
         <main className='Principal page-produits page-teeshirts'>

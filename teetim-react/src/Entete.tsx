@@ -15,7 +15,7 @@ export default function Entete({ panier }: {panier: IProduit}) {
     console.log(panier);
     const arrayValPanier = Object.values(panier);
     console.log(arrayValPanier);
-    // Beau code declaratif, expressif, fonctionnel
+    // Beau code declaratif (expressif, fonctionnel)
     const nbArticles: number = arrayValPanier.reduce(
         (accumulateur: number, elemCourant) => elemCourant.qte + accumulateur,
         0

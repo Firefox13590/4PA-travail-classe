@@ -2,7 +2,8 @@ import './Produit.css';
 
 
 
-export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {id: string, nom: string, prix: number, ventes: number, panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
+// export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {id: string, nom: string, prix: number, ventes: number, panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
+export default function Produit({ id, nom, prix, ventes, panier, setPanier }: ITeeshirtProduit & IPropPrincipal) {
 
 
     function ajouterArticle() {
@@ -12,8 +13,8 @@ export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {i
                 ...prev,
                 [id]: {
                     prix: panier[id].prix,
-                    qte: panier[id].qte++
-                }
+                    qte: panier[id].qte++,
+                },
             }));
         }
         else {
@@ -22,11 +23,11 @@ export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {i
                 ...prev,
                 [id]: {
                     prix: prix,
-                    qte: 1
-                }
+                    qte: 1,
+                },
             }))
         }
-        console.log(panier);
+        // console.log(panier);
         // setPanier({...panier});
     }
 
@@ -47,7 +48,8 @@ export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {i
                 </span>
             </div>
             <button className="btn-ajouter"
-                onClick={ajouterArticle}>Ajouter au panier</button>
+                onClick={ajouterArticle}>Ajouter au panier
+            </button>
         </article>
     )
 }

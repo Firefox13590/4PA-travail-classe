@@ -3,7 +3,7 @@ import './Principal.css';
 
 
 
-export default function Principal(props: {panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
+export default function Principal(props: IPropPrincipal) {
     // const [filtre, setFiltre] = useState("tous");
     // const [tri, setTri] = useState("random");
 

@@ -1,9 +1,9 @@
 import './ListeProduits.css';
 import Produit from './Produit';
-import produits from './data/teeshirts.json';
+import produits from '../data/teeshirts.json';
 
 
-export default function ListeProduits(props: {panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
+export default function ListeProduits(props: IPropPrincipal) {
 
     return (
         <section className='ListeProduits'>

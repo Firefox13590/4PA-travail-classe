@@ -7,6 +7,13 @@ import './Produit.css';
 export default function Produit({ id, nom, prix, ventes, panier, setPanier }: ITeeshirtProduit & IPropPrincipal) {
 
 
+    /* 
+    2e arg: deps[]
+    
+    pas de 2e arg: run a chaque (any) useState
+    deps vide []: run a chaque refresh page
+    deps avec valeur(s) [balls]: run quand valeur(s) change
+    */
     useEffect(() => {
         localStorage.setItem('panier-teetim', JSON.stringify(panier));
     }, [panier]);

@@ -1,9 +1,15 @@
+import { useEffect } from 'react';
 import './Produit.css';
 
 
 
 // export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {id: string, nom: string, prix: number, ventes: number, panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
 export default function Produit({ id, nom, prix, ventes, panier, setPanier }: ITeeshirtProduit & IPropPrincipal) {
+
+
+    useEffect(() => {
+        localStorage.setItem('panier-teetim', JSON.stringify(panier));
+    }, [panier]);
 
 
     function ajouterArticle() {

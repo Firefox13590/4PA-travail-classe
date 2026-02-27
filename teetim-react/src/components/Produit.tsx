@@ -1,17 +1,15 @@
 import { useEffect } from 'react';
 import './Produit.css';
+import { formatterMontant } from '../code/utils';
 
 
 
-// export default function Produit({ id, nom, prix, ventes, panier, setPanier }: {id: string, nom: string, prix: number, ventes: number, panier: IProduit, setPanier: React.Dispatch<React.SetStateAction<IProduit>>}) {
 export default function Produit({ id, nom, prix, ventes, panier, setPanier }: ITeeshirtProduit & IPropPrincipal) {
-
-
     /* 
     2e arg: deps[]
     
     pas de 2e arg: run a chaque (any) useState
-    deps vide []: run a chaque refresh page
+    deps vide []: run 1 fois a chaque render du composant
     deps avec valeur(s) [balls]: run quand valeur(s) change
     */
     useEffect(() => {
@@ -55,9 +53,8 @@ export default function Produit({ id, nom, prix, ventes, panier, setPanier }: IT
                 <span className="nom">{nom}</span>
                 <span className="prix">
                     <span className="montant">
-                        {prix}
+                        {formatterMontant(prix)}
                     </span>
-                    $
                 </span>
             </div>
             <button className="btn-ajouter"

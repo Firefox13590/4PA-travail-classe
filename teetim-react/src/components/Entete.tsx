@@ -1,6 +1,7 @@
 import './Entete.css';
 import logo from '../assets/images/logo.png';
-import formatterMontant from '../code/utils'
+import { formatterMontant } from '../code/utils'
+
 
 
 export default function Entete(props: IPropEntete) {
@@ -33,8 +34,8 @@ export default function Entete(props: IPropEntete) {
         ],
         [0, 0]
     ).map((val, i) => {
-        if(i % 2){
-            formatterMontant(val, 'fr-CA');
+        if (i % 2) {
+            formatterMontant(val);
         }
         return val
     });

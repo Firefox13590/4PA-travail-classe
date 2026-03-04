@@ -33,7 +33,7 @@ export default function Entete(props: IPropEntete) {
             <nav className="barre-logo">
                 <label htmlFor="cc-btn-responsive" className="material-icons burger">menu</label>
                 {/* <a className="logo" href="#"><img src={logo} alt="Accueil" /></a> */}
-                <Link className='logo' to="/"><img src={logo} alt="Accueil" /></Link>
+                <Link className='logo' to="/4PA-travail-classe/"><img src={logo} alt="Accueil" /></Link>
                 <div className="panier-icone">
                     <div className="panier-badge ">{sommaire[0]}</div>
                     <label htmlFor="panier-cc" className="material-icons">shopping_cart</label>
@@ -61,7 +61,7 @@ export default function Entete(props: IPropEntete) {
             <nav className="principale">
                 <label htmlFor="cc-btn-responsive" className="menu-controle material-icons">close</label>
                 {/* <a href="#" className="actif">Teeshirts</a> */}
-                <NavLink to="/teeshirts" className={({isActive}) => isActive ? "actif" : ""}>Teeshirts</NavLink>
+                <NavLink to="/4PA-travail-classe/teeshirts" className={({isActive}) => isActive ? "actif" : ""}>Teeshirts</NavLink>
                 <a href="#" className="">Casquettes</a>
                 <a href="#" className="">Hoodies</a>
                 <span className="separateur"></span>

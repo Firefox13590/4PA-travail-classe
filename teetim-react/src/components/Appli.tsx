@@ -18,8 +18,8 @@ export default function Appli() {
         <div className="Appli">
             <Entete panier={panier} />
             <Routes>
-                <Route path="/" element={<Accueil />} Component={Accueil} />
-                <Route path="/teeshirts" element={<Principal setPanier={setPanier} panier={panier} />} />
+                <Route path="/4PA-travail-classe/" element={<Accueil />} Component={Accueil} />
+                <Route path="/4PA-travail-classe/teeshirts" element={<Principal setPanier={setPanier} panier={panier} />} />
             </Routes>
 
             {/* <Principal setPanier={setPanier} panier={panier} /> */}

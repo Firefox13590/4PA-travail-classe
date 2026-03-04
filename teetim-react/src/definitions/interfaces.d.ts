@@ -41,3 +41,10 @@ interface IPropPrincipal {
     panier: IProduit,
     setPanier: React.Dispatch<React.SetStateAction<IProduit>>,
 }
+/**
+ * Propriétées du composant Seo
+ */
+interface IPropSeo {
+    titre: string,
+    description: string
+}

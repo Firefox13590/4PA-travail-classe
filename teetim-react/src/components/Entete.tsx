@@ -1,32 +1,12 @@
 import './Entete.css';
 import logo from '../assets/images/logo.png';
 import { formatterMontant } from '../code/utils'
+import { Link, NavLink } from 'react-router-dom';
 
 
 
 export default function Entete(props: IPropEntete) {
-    // Code imperatif ===> pipi caca fesse
-    // let nbArticles = 0;
-    // let sousTotal = 0;
-    // for(let idArticle in props.panier){
-    //     nbArticles += props.panier[idArticle].qte;
-    //     sousTotal += props.panier[idArticle].qte * props.panier[idArticle].prix;
-    // }
-
-    // Utiliser Array.reduce() sur tableau de valeurs de panier
-    // console.log(props.panier);
     const arrayValPanier = Object.values(props.panier);
-    // console.log(arrayValPanier);
-    // Beau code declaratif (expressif, fonctionnel)
-    // const nbArticles: number = arrayValPanier.reduce(
-    //     (accumulateur: number, elemCourant) => elemCourant.qte + accumulateur,
-    //     0
-    // );
-    // const sousTotal = formatterMontant(arrayValPanier.reduce(
-    //     (total: number, el) => total + (el.prix * el.qte),
-    //     0
-    // ), 'fr-CA');
-    // console.log(formatterMontant(sousTotal, 'fr-CA'));
     const sommaire = arrayValPanier.reduce(
         (acc, cur) => [
             acc[0] + cur.qte,
@@ -52,7 +32,8 @@ export default function Entete(props: IPropEntete) {
             </nav>
             <nav className="barre-logo">
                 <label htmlFor="cc-btn-responsive" className="material-icons burger">menu</label>
-                <a className="logo" href="#"><img src={logo} alt="Accueil" /></a>
+                {/* <a className="logo" href="#"><img src={logo} alt="Accueil" /></a> */}
+                <Link className='logo' to="/"><img src={logo} alt="Accueil" /></Link>
                 <div className="panier-icone">
                     <div className="panier-badge ">{sommaire[0]}</div>
                     <label htmlFor="panier-cc" className="material-icons">shopping_cart</label>
@@ -79,7 +60,8 @@ export default function Entete(props: IPropEntete) {
             <input type="checkbox" id="cc-btn-responsive" />
             <nav className="principale">
                 <label htmlFor="cc-btn-responsive" className="menu-controle material-icons">close</label>
-                <a href="#" className="actif">Teeshirts</a>
+                {/* <a href="#" className="actif">Teeshirts</a> */}
+                <NavLink to="/teeshirts" className={({isActive}) => isActive ? "actif" : ""}>Teeshirts</NavLink>
                 <a href="#" className="">Casquettes</a>
                 <a href="#" className="">Hoodies</a>
                 <span className="separateur"></span>
